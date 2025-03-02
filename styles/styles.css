@@ -130,3 +130,35 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+.menu-item {
+  background-color: #ecf0f1;
+  padding: 15px;
+  margin: 0 auto;
+  border-radius: 5px;
+  width: 700px;
+}
+
+h2{
+  text-align: center;
+}
+
+p{
+  text-align: center;
+}
+
+.menu-item h3 {
+  font-size: 1.8em;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.menu-item p {
+  font-size: 1.1em;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #e74c3c;
+}
