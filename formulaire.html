@@ -16,119 +16,35 @@
     <header>
       <nav>
         <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="habillement.html">Habillement</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="formulaire.html">Formulaire</a></li>
-          <li><a href="accomodement.html">Accomodement</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="#" onclick="setLanguage('fr')">Francais</a></li>
-          <li><a href="#" onclick="setLanguage('en')">English</a></li>
+          <li><a data-key="accueil" href="index.html">Accueil</a></li>
+          <li>
+            <a data-key="habillement" href="habillement.html">Habillement</a>
+          </li>
+          <li><a data-key="menu" href="menu.html">Menu</a></li>
+          <li>
+            <a data-key="formulaire" href="formulaire.html">Formulaire</a>
+          </li>
+          <li>
+            <a data-key="accomodement" href="accomodement.html">Accomodement</a>
+          </li>
+          <li><a data-key="contact" href="contact.html">Contact</a></li>
+          <li>
+            <a data-key="francais" href="#" onclick="toggleLanguage('fr')"
+              >Francais</a
+            >
+          </li>
+          <li>
+            <a data-key="anglais" href="#" onclick="toggleLanguage('en')"
+              >Anglais</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
 
     <main>
       <section>
-        <form class="form-container">
-          <h2>Inscription</h2>
-          <label for="nom">Nom :</label>
-          <input type="text" id="nom" name="nom" required />
-
-          <div class="checkbox-section">
-            <label for="options" class="checkbox-label"
-              >Sélectionnez un élément :</label
-            >
-            <div class="checkbox-container">
-              <label>
-                <input
-                  type="checkbox"
-                  id="air"
-                  class="checkbox"
-                  onclick="toggleCheckboxes(this)"
-                />
-                Air
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  id="mer"
-                  class="checkbox"
-                  onclick="toggleCheckboxes(this)"
-                />
-                Mer
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  id="terre"
-                  class="checkbox"
-                  onclick="toggleCheckboxes(this)"
-                />
-                Terre
-              </label>
-            </div>
-          </div>
-          <div class="checkbox-section">
-            <label for="options" class="checkbox-label"
-              >Décoration :</label
-            >
-            <div class="checkbox-container">
-              <label>
-                <input
-                  type="checkbox"
-                  id="cd"
-                  class="checkbox"
-                  onclick="toggleCheckboxes(this)"
-                />
-                CD
-              </label>
-              <label>
-                <input
-                  type="checkbox"
-                  id="mmm"
-                  class="checkbox"
-                  onclick="toggleCheckboxes(this)"
-                />
-                MMM
-              </label>
-              <label>
-                <input
-                  type="text"
-                  id="autre"
-                  class="checkbox"
-                  onclick="toggleCheckboxes(this)"
-                />
-                Autre preciser
-              </label>
-            </div>
-          </div>
-
-          <div class="checkbox-section">
-            <label for="options" class="checkbox-label"
-              >Membre de l'ACPM :</label
-            >
-            <div class="checkbox-container">
-              <label>
-                <input
-                  type="checkbox"
-                  id="member"
-                  class="checkbox"
-                  onclick="toggleCheckboxes(this)"
-                />
-                OUI
-              </label>
-            </div>
-          </div>
-
-          <label for="allergie">Allergie alimentaire :</label>
-          <input type="text" id="allergie" name="allergie" required />
-
-          <label for="nom">Végétarien :</label>
-          <input type="text" id="vegetarien" name="vegetarien" required />
-
-          <button type="submit">S'inscrire</button>
-        </form>
+        <iframe src="https://1drv.ms/w/c/2ecc8f4bbd690395/IQRArSEMvqGkTKIFKaFmnizLAdA19-39By8X3fAOX7x2gUk" class="pdf" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
       </section>
     </main>
 

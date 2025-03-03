@@ -157,6 +157,25 @@ p{
   font-size: 1.1em;
 }
 
+.yellow {
+  text-decoration: underline;
+}
+
+.contact {
+  background-image: url("/images/contact.jpeg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menu-font {
+  background-image: url("/images/menuFont.jpeg");
+  height: 500px; 
+  /* background-attachment: fixed; */
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+}
+
 .price {
   font-weight: bold;
   font-size: 1.3em;

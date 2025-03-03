@@ -12,40 +12,54 @@
     <header>
       <nav>
         <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="habillement.html">Habillement</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="formulaire.html">Formulaire</a></li>
-          <li><a href="accomodement.html">Accomodement</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="#" onclick="setLanguage('fr')">Francais</a></li>
-          <li><a href="#" onclick="setLanguage('en')">English</a></li>
+          <li><a data-key="accueil" href="index.html">Accueil</a></li>
+          <li>
+            <a data-key="habillement" href="habillement.html">Habillement</a>
+          </li>
+          <li><a data-key="menu" href="menu.html">Menu</a></li>
+          <li>
+            <a data-key="formulaire" href="formulaire.html">Formulaire</a>
+          </li>
+          <li>
+            <a data-key="accomodement" href="accomodement.html">Accomodement</a>
+          </li>
+          <li><a data-key="contact" href="contact.html">Contact</a></li>
+          <li>
+            <a data-key="francais" href="#" onclick="toggleLanguage('fr')"
+              >Francais</a
+            >
+          </li>
+          <li>
+            <a data-key="anglais" href="#" onclick="toggleLanguage('en')"
+              >Anglais</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
 
     <main>
       <section>
-        <h1 class="h1-title">
-          2ième Édition du Bal du 5e Régiment de la Police Militaire 2025
+        <h1 class="h1-title" data-key="title">
+          2e Édition du Bal du 5e Régiment de la Police Militaire 2025
         </h1>
       </section>
       <section>
-        <p>
+        <p data-key="habillement1">
           L’habillement consistera pour les militaires de Sgt a Adjuc ainsi que
           les officiers a la tenue de Mess 2D, Pour ceux qui non pas de tenue de
           mess, la tenue sera tenu de mess 2B. Afin de voir les tenues veuillez
           cliquer sur l’onglet ci-dessous.
         </p>
-        <p>
+        <p data-key="habillement2">
           La suggestion pour les personnes civiles est de porter l’habit cravate
           pour les hommes et robe de cocktail pour les femmes.
         </p>
-        <p>
-          The event includes a cocktail reception, dinner and dancing. Military
-          balls have many traditions that vary by military branch. If this is
-          your first time attending, it is wise to familiarize yourself with the
-          traditions and etiquette.
+        <p data-key="habillement3">
+          L'événement comprend une réception cocktail, un dîner et de la danse.
+          Les bals militaires ont de nombreuses traditions qui varient selon la
+          branche militaire. Si c'est votre première fois, il est sage de vous
+          familiariser avec les traditions et l'étiquette.
         </p>
       </section>
       <section>

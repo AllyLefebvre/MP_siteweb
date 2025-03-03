@@ -8,54 +8,73 @@
     <script src="scripts/script.js" defer></script>
   </head>
 
-  <body>
+  <body class="menu-font">
     <header>
       <nav>
         <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="habillement.html">Habillement</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="formulaire.html">Formulaire</a></li>
-          <li><a href="accomodement.html">Accomodement</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="#" onclick="setLanguage('fr')">Francais</a></li>
-          <li><a href="#" onclick="setLanguage('en')">English</a></li>
+          <li><a data-key="accueil" href="index.html">Accueil</a></li>
+          <li>
+            <a data-key="habillement" href="habillement.html">Habillement</a>
+          </li>
+          <li><a data-key="menu" href="menu.html">Menu</a></li>
+          <li>
+            <a data-key="formulaire" href="formulaire.html">Formulaire</a>
+          </li>
+          <li>
+            <a data-key="accomodement" href="accomodement.html">Accomodement</a>
+          </li>
+          <li><a data-key="contact" href="contact.html">Contact</a></li>
+          <li>
+            <a data-key="francais" href="#" onclick="toggleLanguage('fr')"
+              >Francais</a
+            >
+          </li>
+          <li>
+            <a data-key="anglais" href="#" onclick="toggleLanguage('en')"
+              >Anglais</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
 
     <main>
       <section id="1eService">
-        <h2>1er Service</h2>
+        <h2 data-key="1e-service">1er Service</h2>
         <div class="menu-item">
-          <p>POTAGE</p>
-          <p>Velouté du moment selon l’inspiration du chef</p>
+          <p data-key="potage">POTAGE</p>
+          <p data-key="potage2">Velouté du moment selon l’inspiration du chef</p>
         </div>
       </section>
 
       <section id="2eService">
-        <h2>Plats Principaux</h2>
+        <h2 data-key="plat">Plats Principaux</h2>
         <div class="menu-item">
-          <p>Aiguillettes de poulet à la sauce à l’orange grillée</p>
+          <p data-key="plat1">Aiguillettes de poulet à la sauce à l’orange grillée</p>
         </div>
         <div class="menu-item">
-          <p>Pavé de saumon rôti, sauce crémeuse à la bisque de homard</p>
+          <p data-key="plat2">Pavé de saumon rôti, sauce crémeuse à la bisque de homard</p>
         </div>
         <div class="menu-item">
-          <p>
+          <p data-key="plat3">
             Manicotti à la courge musquée et au fromage ricotta avec une sauce
             tomate fraîche au basilic
+          </p>
+        </div>
+        <div class="menu-item yellow">
+          <p data-key="advertise">
+            *Tous les plats principaux sont servis avec des asperges, une ratatouille de légumes, une purée de légumes et des pommes de terre Gabrielle rôties.
           </p>
         </div>
       </section>
 
       <section id="3eService">
-        <h2>Maître Charcutier</h2>
+        <h2 data-key="3e-service">Maître Charcutier</h2>
         <div class="menu-item">
-          <p>
+          <p data-key="charcuterie1">
             Ardoise de charcuteries et de viandes fumées au choix du chef
           </p>
-          <p>Exemple d’une composition d’ardoise de charcuteries : Salami de
+          <p data-key="charcuterie2">Exemple d’une composition d’ardoise de charcuteries : Salami de
             Gênes, rosette de Lyon, jambon de Parme, Porchetta, jambon, rôti de
             dinde</p>
         </div>
