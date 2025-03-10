@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulaire</title>
+    <title>Upload de fichier</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="styles/styles.css" />
-    <script src="scripts/script.js" defer></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
+    <!-- <style>
+      /* Styles généraux */
+      body {
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+      }
+
+    </style> -->
   </head>
 
   <body>
@@ -41,13 +50,146 @@
         </ul>
       </nav>
     </header>
-
     <main>
-      <section>
-        <iframe src="https://1drv.ms/w/c/2ecc8f4bbd690395/IQRArSEMvqGkTKIFKaFmnizLAdA19-39By8X3fAOX7x2gUk" class="pdf" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
-      </section>
+      <div class="container">
+        <h2 id="h2">📄 Téléchargez le fichier à remplir :</h2>
+        <a href="pdf/FormulaireC320pour202025.doc" download class="download-btn"
+          >📥 Télécharger le modèle</a
+        >
+
+        <h3 id="h3">📤 Déposez votre fichier rempli :</h3>
+        <form id="upload-form">
+          <label for="file-input" class="file-label">Choisir un fichier</label>
+          <input
+            type="file"
+            id="file-input"
+            accept=".doc,.docx"
+            required
+            hidden
+          />
+          <span id="file-name">Aucun fichier sélectionné</span>
+
+          <div
+            class="g-recaptcha"
+            data-sitekey="6Ld4xukqAAAAABzDTsMHSbbWOvIDxkMs9D7zw8PD"
+          ></div>
+          <button type="submit">Envoyer</button>
+        </form>
+        <p id="status-message"></p>
+      </div>
     </main>
 
-    <footer></footer>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script>
+      emailjs.init("8PvYDU8X1AOHUMZK9"); // Remplace par ta clé publique EmailJS
+
+      document
+        .getElementById("file-input")
+        .addEventListener("change", function () {
+          let file = this.files[0];
+          let fileName = file ? file.name : "Aucun fichier sélectionné";
+          let fileSize = file ? file.size : 0;
+          let fileExtension = fileName.split(".").pop().toLowerCase();
+
+          let allowedExtensions = ["doc", "docx"];
+
+          if (!allowedExtensions.includes(fileExtension)) {
+            showMessage(
+              "⚠️ Seuls les fichiers .doc et .docx sont autorisés.",
+              "red"
+            );
+            resetFileInput();
+            return;
+          }
+
+          if (fileSize > 5 * 1024 * 1024) {
+            showMessage("⚠️ Le fichier ne doit pas dépasser 5 Mo.", "red");
+            resetFileInput();
+            return;
+          }
+
+          document.getElementById("status-message").innerText = "";
+          document.getElementById("file-name").innerText = fileName;
+        });
+
+      document
+        .getElementById("upload-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          let fileInput = document.getElementById("file-input");
+          let recaptchaResponse = grecaptcha.getResponse();
+
+          if (!recaptchaResponse) {
+            showMessage("⚠️ Veuillez valider le reCAPTCHA.", "red");
+            return;
+          }
+
+          if (fileInput.files.length === 0) {
+            showMessage("⚠️ Veuillez sélectionner un fichier.", "red");
+            return;
+          }
+
+          let file = fileInput.files[0];
+          let fileExtension = file.name.split(".").pop().toLowerCase();
+          let allowedExtensions = ["doc", "docx"];
+
+          if (!allowedExtensions.includes(fileExtension)) {
+            showMessage(
+              "⚠️ Seuls les fichiers .doc et .docx sont autorisés.",
+              "red"
+            );
+            return;
+          }
+
+          if (file.size > 5 * 1024 * 1024) {
+            showMessage("⚠️ Le fichier est trop volumineux. Max: 5 Mo.", "red");
+            return;
+          }
+
+          let reader = new FileReader();
+          reader.readAsDataURL(file);
+
+          reader.onload = function (event) {
+            let base64File = event.target.result;
+
+            emailjs
+              .send("service_29wrzro", "template_bic9v5k", {
+                content: base64File,
+              })
+              .then((response) => {
+                if (response.ok) {
+                  showMessage(
+                    "✅ Fichier envoyé avec succès !",
+                    "green"
+                  );
+                  resetFileInput();
+                  grecaptcha.reset();
+                } else {
+                  throw new Error("Erreur lors de l'envoi");
+                }
+              })
+              .catch((error) => {
+                console.log(error);
+                showMessage("❌ Erreur lors de l'envoi.", "red");
+              });
+          };
+        });
+
+      function showMessage(message, color) {
+        let statusMessage = document.getElementById("status-message");
+        statusMessage.innerText = message;
+        statusMessage.style.color = color;
+      }
+
+      function resetFileInput() {
+        document.getElementById("file-input").value = "";
+        document.getElementById("file-name").innerText =
+          "Aucun fichier sélectionné";
+      }
+    </script>
   </body>
 </html>
