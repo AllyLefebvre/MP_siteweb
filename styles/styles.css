@@ -164,17 +164,15 @@ p{
 }
 
 .contact {
-  background-image: url("/images/contact.jpeg");
+  background-image: url("../images/contact.jpeg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .menu-font {
-  background-image: url("/images/menuFont.jpeg");
-  height: 500px; 
-  /* background-attachment: fixed; */
-  /* background-repeat: no-repeat; */
+  background-image: url("../images/menuFont.jpeg");
+  height: 500px;
   background-size: cover;
 }
 
