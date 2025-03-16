@@ -84,6 +84,8 @@ function toggleLanguage(lang) {
         "The suggestion for civilians is to wear a tie and suit for men and a cocktail dress for women.",
       habillement3:
         "The event includes a cocktail reception, dinner, and dancing. Military balls have many traditions that vary by military branch. If this is your first time attending, it is wise to familiarize yourself with the traditions and etiquette.",
+      habillement4:
+        "Soldier accapareau chief: It is strongly recommended to wear the military uniform as shown in the photo, but the choice to wear it with a bow tie (not a tie) is optional.",
       accomodement1:
         "There is accommodation for those who wish to stay in the region. We have added a place that might interest you.",
       accomodement2: "Naval Reserve Point at Carcy.",
@@ -105,7 +107,15 @@ function toggleLanguage(lang) {
         "Example of a charcuterie slate composition: Genoa salami, Lyon rosette, Parma ham, Porchetta, ham, turkey roast",
 
       "contact-title": "Contact us",
-      "contact-message": "If you have any questions or would like to discuss anything related to the ball, feel free to contact Yves Dureau at the following address:",
+      "contact-message":
+        "If you have any questions or would like to discuss anything related to the ball, feel free to contact Yves Dureau at the following address:",
+      programme: "Evening Program",
+      discours: "📢 Speech",
+      "discours-heure": "7:00 PM",
+      souper: "🍽️ Dinner",
+      "souper-heure": "7:15 PM - 9:00 PM",
+      bal: "💃 Ball",
+      "bal-heure": "9:00 PM",
     },
 
     fr: {
@@ -131,6 +141,8 @@ function toggleLanguage(lang) {
         "La suggestion pour les personnes civiles est de porter une tenue avec cravate pour les hommes et une robe de cocktail pour les femmes.",
       habillement3:
         "L'événement comprend une réception cocktail, un dîner et de la danse. Les bals militaires ont de nombreuses traditions qui varient selon la branche militaire. Si c'est votre première fois, il est sage de vous familiariser avec les traditions et l'étiquette.",
+      habillement4:
+        "Soldat accapareau chef : Il est fortement recommandé de porter l'uniforme militaire tel que montré sur la photo, mais le choix de le porter avec un nœud papillon (et non une cravate) reste libre.",
       accomodement1:
         "Il y a de l’accomodation pour ceux qui désirent rester dans la région. Nous avons ajouté un endroit qui pourrait vous intéresser.",
       accomodement2: "Réserve Navale Point à Carcy.",
@@ -152,7 +164,15 @@ function toggleLanguage(lang) {
       charcuterie2:
         "Exemple d’une composition d’ardoise de charcuteries : Salami de Gênes, rosette de Lyon, jambon de Parme, Porchetta, jambon, rôti de dinde",
       "contact-title": "Contactez-nous",
-      "contact-message": "Si vous avez des questions ou si vous souhaitez discuter de tout autre sujet lié au bal, n'hésitez pas à contacter Yves Dureau à l'adresse suivante:",
+      "contact-message":
+        "Si vous avez des questions ou si vous souhaitez discuter de tout autre sujet lié au bal, n'hésitez pas à contacter Yves Dureau à l'adresse suivante:",
+      programme: "Programme de la Soirée",
+      discours: "📢 Discours",
+      "discours-heure": "19h00",
+      souper: "🍽️ Souper",
+      "souper-heure": "19h15 - 21h00",
+      bal: "💃 Bal",
+      "bal-heure": "21h00",
     },
   };
   // Alterner entre les langues
