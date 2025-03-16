@@ -1,10 +1,9 @@
 body {
-  background-image: url("../../MP_siteweb/images/fond.png");
+  background-image: url("/images/fond.png");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   font-size: larger;
-  
 }
 
 main {
