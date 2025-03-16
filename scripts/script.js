@@ -116,6 +116,8 @@ function toggleLanguage(lang) {
       "souper-heure": "7:15 PM - 9:00 PM",
       bal: "💃 Ball",
       "bal-heure": "9:00 PM",
+      arriver:"🕕 Guest Arrival",
+      "arriver-heure":"6:00 PM"
     },
 
     fr: {
@@ -173,6 +175,8 @@ function toggleLanguage(lang) {
       "souper-heure": "19h15 - 21h00",
       bal: "💃 Bal",
       "bal-heure": "21h00",
+      arriver:"🕕 Arrivée des invités",
+      "arriver-heure":"18h00"
     },
   };
   // Alterner entre les langues
