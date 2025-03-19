@@ -150,7 +150,7 @@
                 content: base64File,
               })
               .then((response) => {
-                if (response.ok) {
+                if (response.status === 200) {
                   showMessage(
                     "✅ Fichier envoyé avec succès !",
                     "green"
