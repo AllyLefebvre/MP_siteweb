@@ -158,6 +158,7 @@
                   resetFileInput();
                   grecaptcha.reset();
                 } else {
+                  console.log(response)
                   throw new Error("Erreur lors de l'envoi");
                 }
               })
