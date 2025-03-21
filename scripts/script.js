@@ -29,7 +29,14 @@ function downloadDocument() {
 }
 // Fonction pour changer la langue
 function toggleLanguage(lang) {
-  localStorage.setItem("language", lang);
+  console.log(lang)
+  if (lang === null) {
+    localStorage.setItem("language", 'fr');
+  }
+  else{
+    localStorage.setItem("language", lang);
+  }
+  
 
   // Traductions
   const translations = {
@@ -43,37 +50,38 @@ function toggleLanguage(lang) {
       include:
         "The event includes a cocktail, dinner, and dance party. Military balls have many traditions that vary depending on the military branches. If this is your first time attending, it is wise to familiarize yourself with the traditions and etiquette in place.",
       accueil: "Home",
-      habillement: "Clothing",
+      habillement: "Dress Code",
       menu: "Menu",
       formulaire: "Form",
       accomodement: "Accommodation",
       contact: "Contact",
-      francais: "French",
+      photo: "Photos",
+      francais: "Francais",
       anglais: "English",
       habillement1:
         "The dress code for soldiers from Sgt to Adjuc as well as officers will be Mess Dress 2D. For those who do not have Mess Dress, the attire will be Mess Dress 2B. To view the outfits, please click on the tab below.",
       habillement2:
-        "The suggestion for civilians is to wear a tie and suit for men and a cocktail dress for women.",
+        "The suggestion for civilians is to wear evening dress (tailcoat, jacket, tie, evening gown, etc.). Unfortunately, we cannot suggest that women wear dresses or adhere to gender stereotypes. For example, a woman may wish to wear a tailcoat instead of a dress as suggested.",
       habillement3:
-        "The event includes a cocktail reception, dinner, and dancing. Military balls have many traditions that vary by military branch. If this is your first time attending, it is wise to familiarize yourself with the traditions and etiquette.",
+        "The event includes a cocktail reception, dinner, and dancing. Military balls have many traditions that vary depending on the military branch. If this is your first time, it's wise to familiarize yourself with the traditions and etiquette. Reference: https://www.canada.ca/content/dam/themes/defence/caf/militaryhistory/dhh/popular/coutumes-traditions-forces-canadiennes-ch-1-7.pdf",
       habillement4:
         "Soldier and master corporal: It is strongly recommended to wear the military uniform as shown in the photo, but the choice to wear it with a bow tie (not a tie) is optional.",
       accomodement1:
         "There is accommodation for those who wish to stay in the region. We have added a place that might interest you.",
       accomodement2: "Naval Reserve Point at Carcy.",
       accomodement3:
-        "However, it is your choice to choose your own place if you wish.",
-      "1e-service": "1st Service",
+        "However, you are free to choose your own location if you wish.",
+      "1e-service": "Appetizer",
       potage: "SOUP",
       potage2: "Soup of the moment according to the chef’s inspiration",
-      plat: "Main Courses",
+      plat: "Choice of main courses",
       plat1: "Chicken fillets with grilled orange sauce",
       plat2: "Roast salmon fillet with creamy lobster bisque sauce",
       plat3:
         "Manicotti with butternut squash and ricotta cheese with fresh tomato basil sauce",
       advertise:
         "*All main dishes are served with asparagus, vegetable ratatouille, vegetable puree, and roasted Gabrielle potatoes.",
-      "3e-service": "Master Charcutier",
+      "3e-service": "Charcuterie",
       charcuterie1: "Slate of charcuterie and smoked meats chosen by the chef",
       charcuterie2:
         "Example of a charcuterie slate composition: Genoa salami, Lyon rosette, Parma ham, Porchetta, ham, turkey roast",
@@ -109,37 +117,38 @@ function toggleLanguage(lang) {
       include:
         "L'événement comprend un cocktail, un dîner et une soirée dansante. Les bals militaires ont de nombreuses traditions qui varient selon les branches militaires. Si c'est la première fois que vous y assistez, il est donc judicieux de vous familiariser avec les traditions et l'étiquette en vigueur.",
       accueil: "Accueil",
-      habillement: "Habillement",
+      habillement: "Code Vestimentaire",
       menu: "Menu",
       formulaire: "Formulaire",
-      accomodement: "Accomodement",
+      accomodement: "Accommodation",
       contact: "Contact",
+      photo: "Photos",
       francais: "Francais",
-      anglais: "Anglais",
+      anglais: "English",
       habillement1:
-        "L’habillement consistera pour les militaires de Sgt à Adjuc ainsi que les officiers à la tenue de Mess 2D. Pour ceux qui n'ont pas de tenue de mess, la tenue sera tenue de mess 2B. Afin de voir les tenues, veuillez cliquer sur l’onglet ci-dessous.",
+        "Pour les militaires du grade de Sergent à Adjudant-chef ainsi que pour les officiers qui possèdent une tenue de mess 2D, nous encourageons le port de celle-ci. Pour ceux qui n'en possèdent pas, la tenue sera la tenue de mess 2B. Veuillez-vous référez aux images ci-dessous pour un visuel.",
       habillement2:
-        "La suggestion pour les personnes civiles est de porter une tenue avec cravate pour les hommes et une robe de cocktail pour les femmes.",
+        "La suggestion pour les personnes civiles est de porter la tenue de soirée (Habit, veston, cravate, robe du soir, etc.) Nous ne pouvons malheureusement pas suggérer aux femmes de porter des robes ni d'entrer dans les stéréotypes de genre. Par exemple, une femme voulant porter un habit au lieu d'une robe tel que suggéré.",
       habillement3:
-        "L'événement comprend une réception cocktail, un dîner et de la danse. Les bals militaires ont de nombreuses traditions qui varient selon la branche militaire. Si c'est votre première fois, il est sage de vous familiariser avec les traditions et l'étiquette.",
+        "L'événement comprend une réception cocktail, un dîner et de la danse. Les bals militaires ont de nombreuses traditions qui varient selon la branche militaire. Si c'est votre première fois, il est sage de vous familiariser avec les traditions et l'étiquette. Référence: https://www.canada.ca/content/dam/themes/defence/caf/militaryhistory/dhh/popular/coutumes-traditions-forces-canadiennes-ch-1-7.pdf",
       habillement4:
-        "Soldat et caporaux-chef : Il est fortement recommandé de porter l'uniforme militaire tel que montré sur la photo, mais le choix de le porter avec un nœud papillon (et non une cravate) reste libre.",
+        "Pour les militaires du grade de Soldat à Caporal-chef : Il est fortement recommandé de porter l'uniforme militaire tel que montré sur l'image, mais le choix de le porter avec un nœud papillon, et non une cravate, reste libre.",
       accomodement1:
         "Il y a de l’accomodation pour ceux qui désirent rester dans la région. Nous avons ajouté un endroit qui pourrait vous intéresser.",
       accomodement2: "Réserve Navale Point à Carcy.",
       accomodement3:
-        "Cependant, il est de votre choix de choisir votre propre endroit, si vous le désirez.",
-      "1e-service": "1er Service",
-      potage: "POTAGE",
+        "Cependant, vous êtes libres de choisir votre propre endroit, si vous le désirez.",
+      "1e-service": "Entrée",
+      potage: "Potage",
       potage2: "Velouté du moment selon l’inspiration du chef",
-      plat: "Plats Principaux",
+      plat: "Plats principaux au choix",
       plat1: "Aiguillettes de poulet à la sauce à l’orange grillée",
       plat2: "Pavé de saumon rôti, sauce crémeuse à la bisque de homard",
       plat3:
         "Manicotti à la courge musquée et au fromage ricotta avec une sauce tomate fraîche au basilic",
       advertise:
         "*Tous les plats principaux sont servis avec des asperges, une ratatouille de légumes, une purée de légumes et des pommes de terre Gabrielle rôties.",
-      "3e-service": "Maître Charcutier",
+      "3e-service": "Charcuterie",
       charcuterie1:
         "Ardoise de charcuteries et de viandes fumées au choix du chef",
       charcuterie2:
