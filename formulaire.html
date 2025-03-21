@@ -8,6 +8,7 @@
   <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <link rel="stylesheet" href="styles/styles.css" />
+  <script src="scripts/script.js" defer></script>
 </head>
 
 <body>
@@ -38,17 +39,26 @@
   </header>
   <main>
     <div class="container">
-      <h2 id="h2">📄 Téléchargez le fichier à remplir :</h2>
-      <a href="pdf/FormulaireC320pour202025.doc" download class="download-btn">📥 Télécharger le modèle</a>
+      <h2 data-key="titleForm" id="h2">📄 Téléchargez le fichier à remplir :</h2>
+      <a data-key="download" id="documentDownload" href="#" class="download-btn">📥 Télécharger le modèle</a>
 
-      <h3 id="h3">📤 Déposez votre fichier rempli :</h3>
+      <h3 data-key="fileNotEmpty" id="h3">📤 Déposez votre fichier rempli :</h3>
       <form id="upload-form">
-        <label for="file-input" class="file-label">Choisir un fichier</label>
+        <label data-key="chooseFile" for="file-input" class="file-label">Choisir un fichier</label>
         <input type="file" id="file-input" accept=".doc,.docx" required hidden />
-        <span id="file-name">Aucun fichier sélectionné</span>
-
+        <span data-key="noFile" id="file-name">Aucun fichier sélectionné</span>
+        <p data-key="cheque">
+          N’oubliez pas d’envoyer votre chèque ou mandat poste a notre service financier, a l’adresse ci- dessous, au
+          nom de MESS Diner PM</p>
+        <div id="leftside">
+          <p>Jennie Perreault</p>
+          <p>5e Régiment Police Militaire</p>
+          <p> Bat 193, local 103</p>
+          <p>6560 Hochelaga, Montréal,Qc</p>
+          <p>H1N 1X9</p>
+        </div>
         <div class="g-recaptcha" data-sitekey="6LdTi_kqAAAAAE2hCEXplvcttWzoFKG5IafKXoX5"></div>
-        <button type="submit">Envoyer</button>
+        <button data-key="send" type="submit">Envoyer</button>
       </form>
       <p id="status-message"></p>
     </div>

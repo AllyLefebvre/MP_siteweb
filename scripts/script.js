@@ -4,57 +4,29 @@ window.addEventListener(
   toggleLanguage(localStorage.getItem("language"))
 );
 
-document
-  .querySelector(".form-container")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
+document.getElementById("documentDownload").addEventListener("click", downloadDocument);
 
-    emailjs.init("8PvYDU8X1AOHUMZK9");
+function downloadDocument() {
 
-    // Désactivation du bouton de soumission pour éviter plusieurs envois
-    const submitButton = document.querySelector("button");
-    submitButton.disabled = true;
-    submitButton.innerText = "Envoi en cours...";
 
-    // Récupérer les données du formulaire
-    var formData = {
-      nom: document.getElementById("nom").value,
-      allergie: document.getElementById("allergie").value,
-      vegetarien: document.getElementById("vegetarien").value,
-      // Récupérer les cases à cocher sélectionnées
-      air: document.getElementById("air").checked ? "Air" : "",
-      mer: document.getElementById("mer").checked ? "Mer" : "",
-      terre: document.getElementById("terre").checked ? "Terre" : "",
-      cd: document.getElementById("cd").checked ? "CD" : "",
-      mmm: document.getElementById("mmm").checked ? "MMM" : "",
-      autre: document.getElementById("autre").value || "", // Si "Autre" est renseigné, récupérer sa valeur
-      member: document.getElementById("member").checked ? "Oui" : "Non",
-    };
-
-    // Filtrer les valeurs vides des cases à cocher
-    formData = Object.fromEntries(
-      Object.entries(formData).filter(([key, value]) => value !== "")
-    );
-
-    // Envoi de l'email via EmailJS
-    emailjs.send("service_29wrzro", "template_bic9v5k", formData).then(
-      function (response) {
-        // Réactivation du bouton et message de succès
-        submitButton.disabled = false;
-        submitButton.innerText = "S'inscrire";
-        alert("Inscription réussie!");
-        document.querySelector(".form-container").reset();
-      },
-      function (error) {
-        // Réactivation du bouton et message d'erreur
-        console.log(error);
-        submitButton.disabled = false;
-        submitButton.innerText = "S'inscrire";
-        alert("Erreur lors de l'inscription. Veuillez réessayer.");
-      }
-    );
-  });
-
+  if (localStorage.getItem("language") === 'fr') {
+    const fichierUrl = 'pdf/FormulaireC320pour202025.doc'
+    const a = document.createElement("a");
+    a.href = fichierUrl;
+    a.download = "FormulaireC320pour202025.doc"; // Nom du fichier à la sauvegarde
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  } else {
+    const fichierUrl = 'pdf/English20Bal202025.doc'
+    const a = document.createElement("a");
+    a.href = fichierUrl;
+    a.download = "English20Bal202025.doc"; // Nom du fichier à la sauvegarde
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+}
 // Fonction pour changer la langue
 function toggleLanguage(lang) {
   localStorage.setItem("language", lang);
@@ -85,7 +57,7 @@ function toggleLanguage(lang) {
       habillement3:
         "The event includes a cocktail reception, dinner, and dancing. Military balls have many traditions that vary by military branch. If this is your first time attending, it is wise to familiarize yourself with the traditions and etiquette.",
       habillement4:
-        "Soldier accapareau chief: It is strongly recommended to wear the military uniform as shown in the photo, but the choice to wear it with a bow tie (not a tie) is optional.",
+        "Soldier and master corporal: It is strongly recommended to wear the military uniform as shown in the photo, but the choice to wear it with a bow tie (not a tie) is optional.",
       accomodement1:
         "There is accommodation for those who wish to stay in the region. We have added a place that might interest you.",
       accomodement2: "Naval Reserve Point at Carcy.",
@@ -116,8 +88,15 @@ function toggleLanguage(lang) {
       "souper-heure": "7:15 PM - 9:00 PM",
       bal: "💃 Ball",
       "bal-heure": "9:00 PM",
-      arriver:"🕕 Guest Arrival",
-      "arriver-heure":"6:00 PM"
+      arriver: "🕕 Guest Arrival",
+      "arriver-heure": "6:00 PM",
+      titleForm: "📄 Download the file to fill out:",
+      download: "📥 Download the template",
+      fileNotEmpty: "📤 Upload your completed file:",
+      chooseFile: "Choose a file",
+      noFile: "No file selected",
+      cheque: "Don't forget to send your check or money order to our financial service at the address below, made payable to MESS Diner PM.",
+      send: "Send"
     },
 
     fr: {
@@ -144,7 +123,7 @@ function toggleLanguage(lang) {
       habillement3:
         "L'événement comprend une réception cocktail, un dîner et de la danse. Les bals militaires ont de nombreuses traditions qui varient selon la branche militaire. Si c'est votre première fois, il est sage de vous familiariser avec les traditions et l'étiquette.",
       habillement4:
-        "Soldat accapareau chef : Il est fortement recommandé de porter l'uniforme militaire tel que montré sur la photo, mais le choix de le porter avec un nœud papillon (et non une cravate) reste libre.",
+        "Soldat et caporaux-chef : Il est fortement recommandé de porter l'uniforme militaire tel que montré sur la photo, mais le choix de le porter avec un nœud papillon (et non une cravate) reste libre.",
       accomodement1:
         "Il y a de l’accomodation pour ceux qui désirent rester dans la région. Nous avons ajouté un endroit qui pourrait vous intéresser.",
       accomodement2: "Réserve Navale Point à Carcy.",
@@ -175,8 +154,15 @@ function toggleLanguage(lang) {
       "souper-heure": "19h15 - 21h00",
       bal: "💃 Bal",
       "bal-heure": "21h00",
-      arriver:"🕕 Arrivée des invités",
-      "arriver-heure":"18h00"
+      arriver: "🕕 Arrivée des invités",
+      "arriver-heure": "18h00",
+      titleForm: "📄 Téléchargez le fichier à remplir :",
+      download: "📥 Télécharger le modèle",
+      fileNotEmpty: "📤 Déposez votre fichier rempli :",
+      chooseFile: "Choisir un fichier",
+      noFile: "Aucun fichier sélectionné",
+      cheque: "N’oubliez pas d’envoyer votre chèque ou mandat poste a notre service financier, a l’adresse ci- dessous, au nom de MESS Diner PM",
+      send: "Envoyer"
     },
   };
   // Alterner entre les langues

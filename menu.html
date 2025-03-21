@@ -1,91 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menu</title>
-    <link rel="stylesheet" href="styles/styles.css" />
-    <script src="scripts/script.js" defer></script>
-  </head>
 
-  <body class="menu-font">
-    <header>
-      <nav>
-        <ul>
-          <li><a data-key="accueil" href="index.html">Accueil</a></li>
-          <li>
-            <a data-key="habillement" href="habillement.html">Habillement</a>
-          </li>
-          <li><a data-key="menu" href="menu.html">Menu</a></li>
-          <li>
-            <a data-key="formulaire" href="formulaire.html">Formulaire</a>
-          </li>
-          <li>
-            <a data-key="accomodement" href="accomodement.html">Accomodement</a>
-          </li>
-          <li><a data-key="contact" href="contact.html">Contact</a></li>
-          <li><a data-key="photo" href="photos.html">Photo</a></li>
-          <li>
-            <a data-key="francais" href="#" onclick="toggleLanguage('fr')"
-              >Francais</a
-            >
-          </li>
-          <li>
-            <a data-key="anglais" href="#" onclick="toggleLanguage('en')"
-              >Anglais</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script src="scripts/script.js" defer></script>
+</head>
 
-    <main>
-      <section id="1eService">
+<body class="menu-font">
+  <header>
+    <nav>
+      <ul>
+        <li><a data-key="accueil" href="index.html">Accueil</a></li>
+        <li>
+          <a data-key="habillement" href="habillement.html">Habillement</a>
+        </li>
+        <li><a data-key="menu" href="menu.html">Menu</a></li>
+        <li>
+          <a data-key="formulaire" href="formulaire.html">Formulaire</a>
+        </li>
+        <li>
+          <a data-key="accomodement" href="accomodement.html">Accomodement</a>
+        </li>
+        <li><a data-key="contact" href="contact.html">Contact</a></li>
+        <li><a data-key="photo" href="photos.html">Photo</a></li>
+        <li>
+          <a data-key="francais" href="#" onclick="toggleLanguage('fr')">Francais</a>
+        </li>
+        <li>
+          <a data-key="anglais" href="#" onclick="toggleLanguage('en')">Anglais</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="1eService">
+      <div class="menu-item">
         <h2 data-key="1e-service">1er Service</h2>
-        <div class="menu-item">
-          <p data-key="potage">POTAGE</p>
-          <p data-key="potage2">Velouté du moment selon l’inspiration du chef</p>
-        </div>
-      </section>
+      </div>
+      <div class="menu-item">
+        <p data-key="potage">POTAGE</p>
+        <p data-key="potage2">Velouté du moment selon l’inspiration du chef</p>
+      </div>
+    </section>
 
-      <section id="2eService">
+    <!-- plats principaux et maitre charcutier dans un bloc blanc / anglais aussi -->
+
+    <section id="2eService">
+      <div class="menu-item">
         <h2 data-key="plat">Plats Principaux</h2>
-        <div class="menu-item">
-          <p data-key="plat1">Aiguillettes de poulet à la sauce à l’orange grillée</p>
-        </div>
-        <div class="menu-item">
-          <p data-key="ou">ou</p>
-        </div>
-        <div class="menu-item">
-          <p data-key="plat2">Pavé de saumon rôti, sauce crémeuse à la bisque de homard</p>
-        </div>
-        <div class="menu-item">
-          <p data-key="ou">ou</p>
-        </div>
-        <div class="menu-item">
-          <p data-key="plat3">
-            Manicotti à la courge musquée et au fromage ricotta avec une sauce
-            tomate fraîche au basilic
-          </p>
-        </div>
-        <div class="menu-item yellow">
-          <p data-key="advertise">
-            *Tous les plats principaux sont servis avec des asperges, une ratatouille de légumes, une purée de légumes et des pommes de terre Gabrielle rôties.
-          </p>
-        </div>
-      </section>
+      </div>
+      <div class="menu-item">
+        <p data-key="plat1">Aiguillettes de poulet à la sauce à l’orange grillée</p>
+      </div>
+      <div class="menu-item">
+        <p data-key="ou">ou</p>
+      </div>
+      <div class="menu-item">
+        <p data-key="plat2">Pavé de saumon rôti, sauce crémeuse à la bisque de homard</p>
+      </div>
+      <div class="menu-item">
+        <p data-key="ou">ou</p>
+      </div>
+      <div class="menu-item">
+        <p data-key="plat3">
+          Manicotti à la courge musquée et au fromage ricotta avec une sauce
+          tomate fraîche au basilic
+        </p>
+      </div>
+      <div class="menu-item yellow">
+        <p data-key="advertise">
+          *Tous les plats principaux sont servis avec des asperges, une ratatouille de légumes, une purée de légumes et
+          des pommes de terre Gabrielle rôties.
+        </p>
+      </div>
+    </section>
 
-      <section id="3eService">
+    <section id="3eService">
+      <div class="menu-item">
         <h2 data-key="3e-service">Maître Charcutier</h2>
-        <div class="menu-item">
-          <p data-key="charcuterie1">
-            Ardoise de charcuteries et de viandes fumées au choix du chef
-          </p>
-          <p data-key="charcuterie2">Exemple d’une composition d’ardoise de charcuteries : Salami de
-            Gênes, rosette de Lyon, jambon de Parme, Porchetta, jambon, rôti de
-            dinde</p>
-        </div>
-      </section>
-    </main>
-  </body>
+      </div>
+      <div class="menu-item">
+        <p data-key="charcuterie1">
+          Ardoise de charcuteries et de viandes fumées au choix du chef
+        </p>
+        <p data-key="charcuterie2">Exemple d’une composition d’ardoise de charcuteries : Salami de
+          Gênes, rosette de Lyon, jambon de Parme, Porchetta, jambon, rôti de
+          dinde</p>
+      </div>
+    </section>
+  </main>
+</body>
+
 </html>
